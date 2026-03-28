@@ -249,7 +249,47 @@
         <footer class="text-center pb-3">
             © 2026 Rental Price Estimation System | All Rights Reserved
         </footer>
+<script>
 
+function sendInquiry(event){
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    if(name === "" || email === "" || message === ""){
+        alert("All fields are required");
+        return false;
+    }
+
+    let inquiry = {
+        name : name,
+        email : email,
+        message : message
+    };
+
+    fetch("/RentalPriceEstimationApp/saveInquiry",{
+        method : "POST",
+        headers : {
+            "Content-Type":"application/json"
+        },
+        body : JSON.stringify(inquiry)
+    })
+    .then(res => res.text())
+    .then(msg => {
+        alert(msg);
+        document.getElementById("contactForm").reset();
+    })
+    .catch(err => {
+        alert("Error : " + err);
+    });
+
+    return false;
+}
+
+</script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     </body>

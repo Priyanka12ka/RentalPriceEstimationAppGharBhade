@@ -281,7 +281,7 @@
             </div>
 
             <script>
-                // SHOW / HIDE PROFILE
+               
                 function showProfile() {
                     document.getElementById("addForm").classList.add("d-none");
                     document.getElementById("profileForm").classList.remove("d-none");
@@ -291,7 +291,7 @@
                     document.getElementById("addForm").classList.remove("d-none");
                 }
 
-                // LOAD STATES
+             
                 function loadS() {
                     fetch("/RentalPriceEstimationApp/admin/states")
                         .then(res => res.json())
@@ -307,7 +307,7 @@
                         });
                 }
 
-                // LOAD CITY
+               
                 function loadC() {
                     let statecode = document.getElementById("ssl").value;
                     if (statecode == "") return;
@@ -326,7 +326,6 @@
                         });
                 }
 
-                // LOAD LOCATION
                 function loadL() {
                     let cityid = document.getElementById("cs").value;
                     if (cityid == "") return;
@@ -345,7 +344,7 @@
                         });
                 }
 
-                // PREDICT RENT
+                // predict rent
                 function predictRent() {
                     let property = {
                         locationcode: Number(document.getElementById("cl").value),

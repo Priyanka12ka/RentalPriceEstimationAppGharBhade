@@ -22,8 +22,8 @@ public class UserRepoImpl implements UserRepo{
 
 	public User findByUserName(String username) {
 
-		List<User> list = jdbcTemplate.query("select * from users where username=?", // check krt username present ahe ka
-																					// nahi
+		List<User> list = jdbcTemplate.query("select * from users where username=?", 
+																					
 				new BeanPropertyRowMapper<>(User.class), username);
 		if (list.isEmpty()) {
 			return null;
@@ -34,7 +34,7 @@ public class UserRepoImpl implements UserRepo{
 
 	@Override
 	public boolean existsByUsername(String username) {
-		String sql = "SELECT COUNT(*) FROM users WHERE username = ?";
+		String sql = "select COUNT(*) from users where username = ?";
 		Integer count = jdbcTemplate.queryForObject(sql, Integer.class, username);
 		return count != null && count > 0;
 	}

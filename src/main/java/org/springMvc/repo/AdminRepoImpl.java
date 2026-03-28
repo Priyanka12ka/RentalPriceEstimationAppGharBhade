@@ -19,13 +19,12 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AdminRepoImpl implements AdminRepo {
 
-	
 	@Autowired
 	JdbcTemplate jdbc;
 	
 	//inquery
 	public int saveInquiry(Inquiry inquiry) {
-        String sql = "INSERT INTO inquiry(name, email, message) VALUES (?, ?, ?)";
+        String sql = "insert into inquiry(name, email, message) values (?, ?, ?)";
         return jdbc.update(sql,
                 inquiry.getName(),
                 inquiry.getEmail(),
@@ -34,7 +33,7 @@ public class AdminRepoImpl implements AdminRepo {
     }
 	
 	public boolean existsByStatename(String statename) {
-		String sql = "SELECT COUNT(*) FROM state WHERE statename = ?";
+		String sql = "select count(*) from state where statename = ?";
         Integer count = jdbc.queryForObject(sql, Integer.class, statename);
         return count != null && count > 0;
 	}
@@ -106,7 +105,7 @@ public class AdminRepoImpl implements AdminRepo {
 
 		@Override
 		public void saveProperty(Property p) {
-			String sql="INSERT INTO property(locationcode,area_sqft,bedrooms,bathrooms,parking,metro_distance,price) values(?,?,?,?,?,?,?)";
+			String sql="insert into property(locationcode,area_sqft,bedrooms,bathrooms,parking,metro_distance,price) values(?,?,?,?,?,?,?)";
 			jdbc.update(sql,
 					p.getLocationcode(),p.getArea_sqft(),p.getBedrooms(),p.getBathrooms(),p.isParking(),p.getMetro_distance(),p.getPrice()
 			);
@@ -117,10 +116,10 @@ public class AdminRepoImpl implements AdminRepo {
 		public List<PropertyDisplay> getAllProperty(){
 
 			String sql="""
-			SELECT 
+			select 
 			p.property_id,
 			s.statename,
-			c.name AS city,
+			c.name as city,
 			l.locationname,
 			p.area_sqft,
 			p.bedrooms,
@@ -128,10 +127,10 @@ public class AdminRepoImpl implements AdminRepo {
 			p.parking,
 			p.metro_distance,
 			p.price
-			FROM property p
-			JOIN location l ON p.locationcode=l.locationcode
-			JOIN city c ON l.cid=c.id
-			JOIN state s ON c.statecode=s.statecode
+			from property p
+			join location l on p.locationcode=l.locationcode
+			join city c on l.cid=c.id
+			join state s on c.statecode=s.statecode
 			""";
 
 			return jdbc.query(sql,(rs,row)->{
@@ -160,13 +159,13 @@ public class AdminRepoImpl implements AdminRepo {
 		public List<Property> searchProperty(String city) {
 			
 			 List<Property> list = jdbc.query(
-				        "SELECT p.property_id, s.statename, c.name AS city, l.locationname, " +
+				        "select p.property_id, s.statename, c.name as city, l.locationname, " +
 				        "p.area_sqft, p.bedrooms, p.bathrooms, p.parking, p.metro_distance, p.price " +
-				        "FROM property p " +
-				        "JOIN location l ON p.locationcode=l.locationcode " +
-				        "JOIN city c ON l.cid=c.id " +
-				        "JOIN state s ON c.statecode=s.statecode " +
-				        "WHERE c.name LIKE '%" + city + "%'",
+				        "from property p " +
+				        "join location l on p.locationcode=l.locationcode " +
+				        "join city c on l.cid=c.id " +
+				        "join state s on c.statecode=s.statecode " +
+				        "where c.name like '%" + city + "%'",
 				        
 				        new RowMapper<Property>() {
 
@@ -195,13 +194,13 @@ public class AdminRepoImpl implements AdminRepo {
 
 		@Override
 		public void deleteProperty(int id) {
-		    String sql = "DELETE FROM property WHERE property_id = ?";
+		    String sql = "delete from property where property_id = ?";
 		    jdbc.update(sql, id);
 		}
 		
 		//update
 		  public int updateProperty(Property p){
-		        String sql = "UPDATE property SET locationcode=?, area_sqft=?, bedrooms=?, bathrooms=?, parking=?, metro_distance=?, price=? WHERE property_id=?";
+		        String sql = "update property set locationcode=?, area_sqft=?, bedrooms=?, bathrooms=?, parking=?, metro_distance=?, price=? where property_id=?";
 
 		        return jdbc.update(sql,
 		                p.getLocationcode(),
@@ -217,7 +216,7 @@ public class AdminRepoImpl implements AdminRepo {
 		  
 		  public Property getPropertyById(int id){
 
-			  String sql = "SELECT property_id, locationcode, area_sqft, bedrooms, bathrooms, parking, metro_distance, price FROM property WHERE property_id=?";
+			  String sql = "select property_id, locationcode, area_sqft, bedrooms, bathrooms, parking, metro_distance, price from property where property_id=?";
 
 			    List<Property> list = jdbc.query(sql,
 			            new BeanPropertyRowMapper<>(Property.class), id);
@@ -232,7 +231,7 @@ public class AdminRepoImpl implements AdminRepo {
 		  //inquiry
 		  public List<Inquiry> getAllInquiries() {
 
-			    String sql = "SELECT * FROM inquiry ORDER BY id DESC";
+			    String sql = "select * from inquiry order by id desc";
 
 			    return jdbc.query(sql, (rs, rowNum) -> {
 			        Inquiry i = new Inquiry();

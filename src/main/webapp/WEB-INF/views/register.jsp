@@ -1,306 +1,311 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-    <!doctype html>
-    <html lang="en">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!doctype html>
+<html lang="en">
 
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>User Registration</title>
+<title>User Registration</title>
 
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+	rel="stylesheet" />
 
-        <style>
-         
-            body {
-                background: linear-gradient(135deg, #71cbc6, #3aa7a3, #2b7a78);
-                background-size: 400% 400%;
-                animation: gradientMove 10s ease infinite;
-                color: white;
-            }
+<style>
+body {
+	background: linear-gradient(135deg, #71cbc6, #3aa7a3, #2b7a78);
+	background-size: 400% 400%;
+	animation: gradientMove 10s ease infinite;
+	color: white;
+}
 
-            @keyframes gradientMove {
-                0% {
-                    background-position: 0% 50%;
-                }
+@
+keyframes gradientMove { 0%{
+	background-position: 0% 50%;
+}
 
-                50% {
-                    background-position: 100% 50%;
-                }
+50
+%
+{
+background-position
+:
+100%
+50%;
+}
+100
+%
+{
+background-position
+:
+0%
+50%;
+}
+}
+.navbar {
+	background: rgba(0, 0, 0, 0.5) !important;
+	backdrop-filter: blur(12px);
+	border-radius: 15px;
+	padding: 0.5rem 1rem;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
-                100% {
-                    background-position: 0% 50%;
-                }
-            }
+.navbar-brand {
+	font-weight: 700;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
 
-         
-            .navbar {
-                background: rgba(0, 0, 0, 0.5) !important;
-                backdrop-filter: blur(12px);
-                border-radius: 15px;
-                padding: 0.5rem 1rem;
-                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            }
+.navbar-brand .home-emoji {
+	font-size: 1.5rem;
+}
 
-            
-            .navbar-brand {
-                font-weight: 700;
-                display: flex;
-                align-items: center;
-                gap: 0.5rem;
-            }
+.shape {
+	position: absolute;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.15);
+	animation: float 8s ease-in-out infinite;
+}
 
-            .navbar-brand .home-emoji {
-                font-size: 1.5rem;
-            }
+.shape1 {
+	width: 180px;
+	height: 180px;
+	top: 10%;
+	left: 10%;
+}
 
-            /* FLOATING CIRCLES */
-            .shape {
-                position: absolute;
-                border-radius: 50%;
-                background: rgba(255, 255, 255, 0.15);
-                animation: float 8s ease-in-out infinite;
-            }
+.shape2 {
+	width: 220px;
+	height: 220px;
+	bottom: 10%;
+	right: 15%;
+	animation-delay: 2s;
+}
 
-            .shape1 {
-                width: 180px;
-                height: 180px;
-                top: 10%;
-                left: 10%;
-            }
+.shape3 {
+	width: 120px;
+	height: 120px;
+	top: 60%;
+	left: 5%;
+	animation-delay: 4s;
+}
 
-            .shape2 {
-                width: 220px;
-                height: 220px;
-                bottom: 10%;
-                right: 15%;
-                animation-delay: 2s;
-            }
+@
+keyframes float { 0%,100%{
+	transform: translateY(0);
+}
 
-            .shape3 {
-                width: 120px;
-                height: 120px;
-                top: 60%;
-                left: 5%;
-                animation-delay: 4s;
-            }
+50
+%
+{
+transform
+:
+translateY(
+-20px
+);
+}
+}
+.main-center {
+	min-height: 90vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
-            @keyframes float {
+.glass-card {
+	background: rgba(0, 0, 0, 0.55);
+	border: 1px solid rgba(113, 203, 198, 0.6);
+	backdrop-filter: blur(15px);
+	border-radius: 18px;
+	padding: 35px;
+	transition: 0.3s;
+}
 
-                0%,
-                100% {
-                    transform: translateY(0);
-                }
+.glass-card:hover {
+	transform: translateY(-5px);
+}
 
-                50% {
-                    transform: translateY(-20px);
-                }
-            }
+.form-control {
+	background: rgba(0, 0, 0, 0.6) !important;
+	color: white !important;
+	border: 1px solid #71cbc6;
+}
 
-        
-            .main-center {
-                min-height: 90vh;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
+.form-control::placeholder {
+	color: #bbb;
+}
 
-         
-            .glass-card {
-                background: rgba(0, 0, 0, 0.55);
-                border: 1px solid rgba(113, 203, 198, 0.6);
-                backdrop-filter: blur(15px);
-                border-radius: 18px;
-                padding: 35px;
-                transition: 0.3s;
-            }
+.form-control:focus {
+	border-color: #71cbc6;
+	box-shadow: 0 0 10px #71cbc6;
+}
 
-            .glass-card:hover {
-                transform: translateY(-5px);
-            }
+.btn-theme {
+	background: #71cbc6;
+	color: black;
+	border: none;
+	transition: 0.3s;
+}
 
-          
-            .form-control {
-                background: rgba(0, 0, 0, 0.6) !important;
-                color: white !important;
-                border: 1px solid #71cbc6;
-            }
+.btn-theme:hover {
+	background: #3aa7a3;
+	color: white;
+	transform: scale(1.05);
+}
+</style>
+</head>
 
-            .form-control::placeholder {
-                color: #bbb;
-            }
+<body>
 
-            .form-control:focus {
-                border-color: #71cbc6;
-                box-shadow: 0 0 10px #71cbc6;
-            }
+	<div class="shape shape1"></div>
+	<div class="shape shape2"></div>
+	<div class="shape shape3"></div>
 
-          
-            .btn-theme {
-                background: #71cbc6;
-                color: black;
-                border: none;
-                transition: 0.3s;
-            }
+	<nav class="navbar navbar-expand-lg navbar-dark">
+		<div class="container">
+			<a class="navbar-brand" href="home"> <span class="home-emoji">🏠</span>
+				Rentमित्रा
+			</a>
 
-            .btn-theme:hover {
-                background: #3aa7a3;
-                color: white;
-                transform: scale(1.05);
-            }
-        </style>
-    </head>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#nav">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 
-    <body>
+			<div class="collapse navbar-collapse" id="nav">
 
-      
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item"><a class="nav-link" href="home">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="about">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
+				</ul>
 
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-                <a class="navbar-brand" href="home">
-                    <span class="home-emoji">🏠</span> Rentमित्रा
-                </a>
+				<div>
+					<a href="lg" class="btn btn-theme me-2">Login</a> <a href="reg"
+						class="btn btn-outline-light">Register</a>
+				</div>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+			</div>
+		</div>
+	</nav>
 
-                <div class="collapse navbar-collapse" id="nav">
+	<div class="main-center">
 
-                    <ul class="navbar-nav me-auto">
-                        <li class="nav-item"><a class="nav-link" href="home">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact">Contact</a></li>
-                    </ul>
+		<div class="col-md-4">
 
-                    <div>
-                        <a href="lg" class="btn btn-theme me-2">Login</a>
-                        <a href="reg" class="btn btn-outline-light">Register</a>
-                    </div>
+			<div class="glass-card shadow-lg">
 
-                </div>
-            </div>
-        </nav>
+				<h3 class="text-center mb-4">✨ Create Account</h3>
 
-       
-        <div class="main-center">
+				<form id="regForm" onsubmit="return validateForm(event)">
 
-            <div class="col-md-4">
+					<div class="mb-3">
+						<label>Full Name</label> <input type="text" class="form-control"
+							id="username" placeholder="Enter your name">
+					</div>
 
-                <div class="glass-card shadow-lg">
+					<div class="mb-3">
+						<label>Email</label> <input type="email" class="form-control"
+							id="email" placeholder="Enter your email">
+					</div>
 
-                    <h3 class="text-center mb-4">✨ Create Account</h3>
+					<div class="mb-3">
+						<label>Contact</label> <input type="text" class="form-control"
+							id="contact" placeholder="Enter 10 digit mobile number">
+					</div>
 
-                    <form id="regForm" onsubmit="return validateForm(event)">
+					<div class="mb-3">
+						<label>Password</label> <input type="password"
+							class="form-control" id="password" placeholder="Create password">
+					</div>
 
-                        <div class="mb-3">
-                            <label>Full Name</label>
-                            <input type="text" class="form-control" id="username" placeholder="Enter your name">
-                        </div>
+					<div class="d-flex justify-content-between mt-3">
+						<button type="submit" class="btn btn-theme">Register</button>
+						<button type="reset" class="btn btn-secondary">Cancel</button>
+					</div>
 
-                        <div class="mb-3">
-                            <label>Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                        </div>
+				</form>
 
-                        <div class="mb-3">
-                            <label>Contact</label>
-                            <input type="text" class="form-control" id="contact"
-                                placeholder="Enter 10 digit mobile number">
-                        </div>
+			</div>
+		</div>
+	</div>
 
-                        <div class="mb-3">
-                            <label>Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Create password">
-                        </div>
+	<footer class="text-center mt-3 pb-3"> © 2026 Rental Price
+		Prediction System </footer>
 
-                        <div class="d-flex justify-content-between mt-3">
-                            <button type="submit" class="btn btn-theme">Register</button>
-                            <button type="reset" class="btn btn-secondary">Cancel</button>
-                        </div>
+	<script
+		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-                    </form>
+	<script>
 
-                </div>
+function validateForm(event){
+event.preventDefault();
 
-            </div>
+let username=document.getElementById("username").value.trim();
+let email=document.getElementById("email").value.trim();
+let contact=document.getElementById("contact").value.trim();
+let password=document.getElementById("password").value.trim();
 
-        </div>
+let namePattern=/^[A-Za-z ]{3,50}$/;
 
-        <!-- FOOTER -->
-        <footer class="text-center mt-3 pb-3">
-            © 2026 Rental Price Prediction System
-        </footer>
+if(username===""){
+alert("Name is required");
+return false;
+}
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+if(!namePattern.test(username)){
+alert("Name must contain only letters and minimum 3 characters");
+return false;
+}
 
-        <script>
-            function validateForm(event) {
-                event.preventDefault();
+let emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                let username = document.getElementById("username").value.trim();
-                let email = document.getElementById("email").value.trim();
-                let contact = document.getElementById("contact").value.trim();
-                let password = document.getElementById("password").value.trim();
+if(!emailPattern.test(email)){
+alert("Enter valid email");
+return false;
+}
 
-                if (username == "") {
-                    alert("Name is required");
-                    return false;
-                }
+let phonePattern=/^[6-9][0-9]{9}$/;
 
-                if (username.length < 3) {
-                    alert("Name must be at least 3 characters");
-                    return false;
-                }
+if(!phonePattern.test(contact)){
+alert("Enter valid 10 digit mobile number starting with 6-9");
+return false;
+}
 
-                let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                if (!emailPattern.test(email)) {
-                    alert("Enter valid email");
-                    return false;
-                }
+if(password.length<6){
+alert("Password must be at least 6 characters");
+return false;
+}
 
-                let phonePattern = /^[0-9]{10}$/;
+let user={
+username:username,
+email:email,
+contact:contact,
+password:password
+};
 
-                if (!phonePattern.test(contact)) {
-                    alert("Contact must be 10 digits");
-                    return false;
-                }
+fetch("register",{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify(user)
+})
+.then(res=>res.text())
+.then(msg=>{
+alert(msg);
+})
+.catch((err)=>{
+alert(err);
+});
 
-                if (password.length < 6) {
-                    alert("Password must be at least 6 characters");
-                    return false;
-                }
+return false;
+}
 
-                let user = {
-                    username: username,
-                    email: email,
-                    contact: contact,
-                    password: password
-                };
+</script>
 
-                fetch("register", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(user)
-                })
-                    .then(res => res.text())
-                    .then(msg => {
-                        alert(msg);
-                    })
-                    .catch((err) => {
-                        alert(err);
-                    });
-
-                return false;
-            }
-        </script>
-
-    </body>
-
-    </html>
+</body>
+</html>
