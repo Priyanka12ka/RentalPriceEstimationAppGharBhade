@@ -1083,7 +1083,7 @@ function saveProperty(){
 	}
 </script>
 
-<!-- delete proprty -->
+<!-- delete property -->
 <script type="text/javascript">
 function deleteProperty(id){
 
