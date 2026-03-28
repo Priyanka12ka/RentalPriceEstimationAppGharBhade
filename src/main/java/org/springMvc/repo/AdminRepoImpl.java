@@ -40,11 +40,11 @@ public class AdminRepoImpl implements AdminRepo {
 
 	@Override
 	public int saveState(State state) {
-		 return jdbc.update(
-			        "insert into state(statecode,statename) values(?,?)",
-			        state.getStatecode(),
-			        state.getStatename()
-			    );
+
+	    return jdbc.update(
+	        "insert into state(statename) values(?)",
+	        state.getStatename()
+	    );
 	}
 	
 	public List<State> getStates()

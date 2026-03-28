@@ -30,56 +30,20 @@ keyframes gradientMove { 0% {
 }
 
 50
-
-
-
-
 %
 {
 background-position
-
-
-
-
 :
-
-
-
-
-100
-
-
-%
-50
-
-
-%;
+100%
+50%;
 }
 100
-
-
-
-
 %
 {
 background-position
-
-
-
-
 :
-
-
-
-
-0
-
-
-%
-50
-
-
-%;
+0%
+50%;
 }
 }
 .navbar {
@@ -88,105 +52,111 @@ background-position
 }
 
 .sidebar {
-    background: linear-gradient(135deg, rgba(50,50,50,0.85), rgba(20,20,20,0.7));
-    backdrop-filter: blur(20px);
-    border-radius: 20px 0 0 20px;
-    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
-    padding: 2rem 1rem;
-    min-height: 100vh;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+	background: linear-gradient(135deg, rgba(50, 50, 50, 0.85),
+		rgba(20, 20, 20, 0.7));
+	backdrop-filter: blur(20px);
+	border-radius: 20px 0 0 20px;
+	box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+	padding: 2rem 1rem;
+	min-height: 100vh;
+	transition: all 0.4s ease;
+	position: relative;
+	overflow: hidden;
 }
-
 
 .sidebar::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(113,203,198,0.2) 0%, transparent 70%);
-    animation: glowMove 8s linear infinite;
-    pointer-events: none;
+	content: '';
+	position: absolute;
+	top: -50%;
+	left: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle, rgba(113, 203, 198, 0.2) 0%,
+		transparent 70%);
+	animation: glowMove 8s linear infinite;
+	pointer-events: none;
 }
 
-@keyframes glowMove {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+@
+keyframes glowMove { 0% {
+	transform: rotate(0deg);
 }
 
-
+100
+%
+{
+transform
+:
+rotate(
+360deg
+);
+}
+}
 .sidebar:hover {
-    transform: scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+	transform: scale(1.02);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
-
 
 .sidebar .nav .btn {
-    background: rgba(255,255,255,0.05);
-    color: #71cbc6;
-    border: 1px solid #71cbc6;
-    border-radius: 12px;
-    margin-bottom: 14px;
-    font-weight: 500;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
+	background: rgba(255, 255, 255, 0.05);
+	color: #71cbc6;
+	border: 1px solid #71cbc6;
+	border-radius: 12px;
+	margin-bottom: 14px;
+	font-weight: 500;
+	position: relative;
+	overflow: hidden;
+	transition: all 0.3s ease;
 }
 
-
 .sidebar .nav .btn:hover {
-    background: #71cbc6;
-    color: #000;
-    transform: translateX(8px);
+	background: #71cbc6;
+	color: #000;
+	transform: translateX(8px);
 }
 
 .sidebar .nav .btn::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background: rgba(255,255,255,0.1);
-    transition: all 0.4s;
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: -100%;
+	background: rgba(255, 255, 255, 0.1);
+	transition: all 0.4s;
 }
 
 .sidebar .nav .btn:hover::after {
-    left: 0;
+	left: 0;
 }
 
-
 .sidebar .btn-danger {
-    border-radius: 15px;
-    font-weight: bold;
-    box-shadow: 0 6px 15px rgba(255,0,0,0.4);
-    transition: all 0.3s ease;
+	border-radius: 15px;
+	font-weight: bold;
+	box-shadow: 0 6px 15px rgba(255, 0, 0, 0.4);
+	transition: all 0.3s ease;
 }
 
 .sidebar .btn-danger:hover {
-    background: #ff4d4d;
-    transform: scale(1.08);
+	background: #ff4d4d;
+	transform: scale(1.08);
 }
-
 
 .sidebar p.text-info {
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-    margin-bottom: 2rem;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	margin-bottom: 2rem;
 }
 
-
 .sidebar::-webkit-scrollbar {
-    width: 6px;
+	width: 6px;
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-    background-color: rgba(113,203,198,0.4);
-    border-radius: 3px;
+	background-color: rgba(113, 203, 198, 0.4);
+	border-radius: 3px;
 }
+
 .glass-card {
 	background: rgba(0, 0, 0, 0.5);
 	border: 1px solid rgba(113, 203, 198, 0.6);
@@ -219,42 +189,66 @@ background-position
 .table {
 	background: rgba(0, 0, 0, 0.5);
 }
+
 .home-emoji {
-    font-size: 1.8rem;  /* adjust emoji size */
-    
+	font-size: 1.8rem;
 }
 
 .navbar {
-    background-color: #2b7a78; /* or any dark teal you like */
+	background-color: #2b7a78;
 }
 
 .btn-delete {
-    background: rgba(255, 77, 77, 0.15);
-    color: #ff4d4d;
-    border: 1px solid #ff4d4d;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+	background: rgba(255, 77, 77, 0.15);
+	color: #ff4d4d;
+	border: 1px solid #ff4d4d;
+	border-radius: 10px;
+	transition: all 0.3s ease;
 }
 
 .btn-delete:hover {
-    background: #ff4d4d;
-    color: #fff;
-    transform: scale(1.05);
+	background: #ff4d4d;
+	color: #fff;
+	transform: scale(1.05);
 }
 
-
 .btn-update {
-    background: rgba(113, 203, 198, 0.15);
-    color: #71cbc6;
-    border: 1px solid #71cbc6;
-    border-radius: 10px;
-    transition: all 0.3s ease;
+	background: rgba(113, 203, 198, 0.15);
+	color: #71cbc6;
+	border: 1px solid #71cbc6;
+	border-radius: 10px;
+	transition: all 0.3s ease;
 }
 
 .btn-update:hover {
-    background: #71cbc6;
-    color: #000;
-    transform: scale(1.05);
+	background: #71cbc6;
+	color: #000;
+	transform: scale(1.05);
+}
+
+.table thead {
+	background: rgba(113, 203, 198, 0.25);
+	color: #71cbc6;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+.table tbody tr:hover {
+	background: rgba(113, 203, 198, 0.1);
+}
+
+.table td, .table th {
+	padding: 12px;
+	vertical-align: middle;
+}
+
+.glass-card h3 {
+	border-bottom: 1px solid rgba(113, 203, 198, 0.4);
+	padding-bottom: 10px;
+}
+
+#displayInquery table tbody tr:hover {
+	background: rgba(113, 203, 198, 0.1);
 }
 </style>
 </head>
@@ -263,14 +257,14 @@ background-position
 
 	<!-- NAVBAR -->
 	<nav class="navbar navbar-expand-lg navbar-dark px-3">
-    <div class="container-fluid justify-content-center d-flex">
-        <!-- Home emoji + RentMitra in center -->
-        <div class="d-flex align-items-center">
-            <div class="home-emoji me-2">🏠</div>
-            <h4 class="fw-bold mb-0">RentMitra</h4>
-        </div>
-    </div>
-</nav>
+		<div class="container-fluid justify-content-center d-flex">
+			<!-- Home emoji + RentMitra in center -->
+			<div class="d-flex align-items-center">
+				<div class="home-emoji me-2">🏠</div>
+				<h4 class="fw-bold mb-0">RentMitra</h4>
+			</div>
+		</div>
+	</nav>
 	<div class="container-fluid">
 		<div class="row">
 
@@ -297,8 +291,8 @@ background-position
 						User</button>
 					<button class="btn menu-btn mb-2"
 						onclick="showSection('displayInquery'); displayInquery();">Inquiry</button>
-						
-						
+
+
 
 					<a class="btn btn-danger mt-4" href="logout">Log Out</a>
 				</div>
@@ -435,12 +429,7 @@ background-position
 
 					<form id="stateForm">
 
-						<!-- State Code -->
-						<div class="mb-3">
-							<label class="form-label">State Code</label> <input type="number"
-								id="statecode" class="form-control"
-								placeholder="Enter unique state code (e.g. 101)">
-						</div>
+						
 
 						<!-- State Name -->
 						<div class="mb-3">
@@ -516,13 +505,14 @@ background-position
 				</div>
 				<!-- ================= PROPERTY ================= -->
 				<div id="searchForm" class="section d-none glass-card p-4">
-					<h3>Property List</h3>
+					<h3 class="text-info mb-4 fw-bold">Property List</h3>
 
 					<input type="text" id="searchCity" class="form-control mb-2"
 						placeholder="City">
 					<button onclick="searchProperty()" class="btn btn-theme mb-3">Search</button>
 
-					<table class="table table-bordered text-light">
+					<table
+						class="table table-dark table-hover align-middle text-center">
 						<thead>
 							<tr>
 								<th>ID</th>
@@ -544,42 +534,46 @@ background-position
 
 				<!-- ================= USERS ================= -->
 				<div id="displayData" class="section d-none glass-card p-4">
-					<h3>User List</h3>
-					<table class="table table-bordered text-light">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Name</th>
-								<th>Email</th>
-								<th>Contact</th>
-								<th>Role</th>
-								<th>Action</th>
-							</tr>
-						</thead>
-						<tbody id="tb"></tbody>
-					</table>
+					<h3 class="text-info mb-4 fw-bold">User List</h3>
+					<div class="table-responsive">
+						<table
+							class="table table-dark table-hover align-middle text-center">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Contact</th>
+									<th>Role</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody id="tb"></tbody>
+						</table>
+					</div>
 				</div>
 
 				<!-- ================= INQUIRY ================= -->
 				<div id="displayInquery" class="section d-none glass-card p-4">
-					<h3>Inquiry</h3>
-					<table class="table table-bordered text-light">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>Name</th>
-								<th>Email</th>
-								<th>Message</th>
-							</tr>
-						</thead>
-						<tbody id="tbb"></tbody>
-					</table>
-				</div>
+					<h3 class="text-info mb-4 fw-bold">Inquiry List</h3>
+					<div class="table-responsive">
+						<table
+							class="table table-dark table-hover align-middle text-center">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Message</th>
+								</tr>
+							</thead>
+							<tbody id="tbb"></tbody>
+						</table>
+					</div>
 
+				</div>
 			</div>
 		</div>
-	</div>
-
 </body>
 <script>
 	
@@ -606,36 +600,45 @@ function display()
 	then((data)=>{   //ya data madhe back end vrun yenari list ahe
 		let tb=document.getElementById("tb");
 		tb.innerHTML="";
-		data.forEach(ele => {
-			let tr = document.createElement("tr");
-			let tdid = document.createElement("td");
-			tdid.innerText = ele.id;
-			let tdname = document.createElement("td");
-			tdname.innerText = ele.username;
-			let tdemail = document.createElement("td");
-			tdemail.innerText = ele.email;
-			let tdcontact = document.createElement("td");
-			tdcontact.innerText = ele.contact;
-			let tdrole = document.createElement("td");
-			tdrole.innerText = ele.role;
-			let tdaction = document.createElement("td");
-			
-			let btn = document.createElement("button");
-			btn.innerText = "Delete";
-			btn.className="btn btn-danger btn-sm";
-			btn.onclick=function(){
-				deleteUser(ele.id);  
-				};
-			
-			tdaction.appendChild(btn);
-			tr.appendChild(tdid);
-			tr.appendChild(tdname);
-			tr.appendChild(tdemail);
-			tr.appendChild(tdcontact);
-			tr.appendChild(tdrole);
-			tr.appendChild(tdaction);
-			tb.appendChild(tr);
-			});
+		data.forEach((ele, index) => {
+
+		    let tr = document.createElement("tr");
+
+		    let tdid = document.createElement("td");
+		    tdid.innerText = index + 1;   // SERIAL NUMBER
+
+		    let tdname = document.createElement("td");
+		    tdname.innerText = ele.username;
+
+		    let tdemail = document.createElement("td");
+		    tdemail.innerText = ele.email;
+
+		    let tdcontact = document.createElement("td");
+		    tdcontact.innerText = ele.contact;
+
+		    let tdrole = document.createElement("td");
+		    tdrole.innerText = ele.role;
+
+		    let tdaction = document.createElement("td");
+
+		    let btn = document.createElement("button");
+		    btn.innerText = "Delete";
+		    btn.className = "btn btn-delete btn-sm";
+		    btn.onclick = function(){
+		        deleteUser(ele.id);   // still using real id internally
+		    };
+
+		    tdaction.appendChild(btn);
+
+		    tr.appendChild(tdid);
+		    tr.appendChild(tdname);
+		    tr.appendChild(tdemail);
+		    tr.appendChild(tdcontact);
+		    tr.appendChild(tdrole);
+		    tr.appendChild(tdaction);
+
+		    tb.appendChild(tr);
+		});
 	}).
 	catch((err)=>{
 		alert(err.message);
@@ -663,38 +666,35 @@ alert("Error : "+err);
 	
 document.getElementById("stateForm").addEventListener("submit",function(event){
 	event.preventDefault();
-	let statecode=document.getElementById("statecode").value.trim();
+
 	let statename=document.getElementById("statename").value.trim();
-	if(statecode=="")
-	{
-	alert("statecode required");
-	return;
-	}
+
 	if(statename=="")
 	{
-	alert("statename required");
-	return;
+		alert("statename required");
+		return;
 	}
+
 	let state={
-	statecode:statecode,
-	statename:statename
+		statename:statename
 	};
+
 	fetch("/RentalPriceEstimationApp/admin/savestate",{
-	method:"POST",
-	headers:{
-	"Content-Type":"application/json"
-	},
-	body:JSON.stringify(state)
+		method:"POST",
+		headers:{
+			"Content-Type":"application/json"
+		},
+		body:JSON.stringify(state)
 	})
 	.then(res=>res.text())
 	.then(msg=>{
-	alert(msg);
-	document.getElementById("stateForm").reset();
+		alert(msg);
+		document.getElementById("stateForm").reset();
 	})
 	.catch(err=>{
-	alert("Error : "+err);
+		alert("Error : "+err);
 	});
-	});
+});
 </script>
 <!-- load state -->
 <script>	
@@ -1171,15 +1171,15 @@ function displayInquery() {
 
         console.log(data);
 
-        let tb = document.getElementById("tbb"); // correct table id
-        tb.innerHTML = ""; // clear once
+        let tb = document.getElementById("tbb"); 
+        tb.innerHTML = "";
 
-        data.forEach(ele => {
+        data.forEach((ele, index) => {
 
             let tr = document.createElement("tr");
 
             let tdid = document.createElement("td");
-            tdid.innerText = ele.id;
+            tdid.innerText = index + 1; 
 
             let tdname = document.createElement("td");
             tdname.innerText = ele.name;
